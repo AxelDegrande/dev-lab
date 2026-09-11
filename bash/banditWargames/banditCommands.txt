@@ -1,0 +1,15 @@
+Level 6:
+find . -size 1033c
+
+Level 7:
+find / -size 33c -user bandit7 -group bandit6
+cat /var/lib/dpkg/info/bandit7.password
+
+Level 8:
+grep -n 'millionth' data.txt
+
+Level 9:
+sort data.txt | uniq -u
+
+Level 10:
+strings data.txt | grep '='
