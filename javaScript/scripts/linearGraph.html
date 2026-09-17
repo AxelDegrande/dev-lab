@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first JavaScript graph</title>
+
+    <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
+</head>
+
+<body>
+
+    <div id="myPlot" style="width:700px;height:500px;"></div>
+    
+    <script>
+        const xValues = [];
+        const yValues = [];
+        
+        // Generate values
+        for (let x = 0; x <= 10; x += 1) {
+            xValues.push(x);
+            yValues.push(x);
+        }
+
+        // Define Data
+        const data = [{
+            x: xValues,
+            y: yValues,
+            mode: "lines"
+        }];
+
+        // Define Layout
+        const layout = {
+            title: "y = x"
+        };
+
+        // Display using Plotly
+        Plotly.newPlot("myPlot", data, layout);
+    </script>
+
+</body>
+</html>

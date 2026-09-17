@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>My first JavaScript random scatter graph</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="400px" height="400px"
+        style="width:100%;max-width:400px;border:1px solid rgb(0, 0, 0)"></canvas>
+
+    <script>
+        // Create an XY Plotter
+        let myPlotter = new XYPlotter("myCanvas");
+
+        // Create random XY Points
+        numPoints = 500;
+        const xPoints = Array(numPoints).fill(0).map(function () { return Math.random() * myPlotter.xMax });
+        const yPoints = Array(numPoints).fill(0).map(function () { return Math.random() * myPlotter.yMax });
+
+        // Plot the Points
+        myPlotter.plotPoints(numPoints, xPoints, yPoints, "blue");
+
+        // Plotter Object
+        function XYPlotter(id) {
+
+            this.canvas = document.getElementById(id);
+            this.ctx = this.canvas.getContext("2d");
+            this.xMin = 0;
+            this.yMin = 0;
+            this.xMax = this.canvas.width;
+            this.yMax = this.canvas.height;
+
+            // Plot Points Function
+            this.plotPoints = function (n, xArr, yArr, color, radius = 3) {
+                for (let i = 0; i < n; i++) {
+                    this.ctx.fillStyle = color;
+                    this.ctx.beginPath();
+                    this.ctx.ellipse(xArr[i], yArr[i], radius, radius, 0, 0, Math.PI * 2);
+                    this.ctx.fill();
+                }
+            }
+
+        } // End Plotter Object
+    </script>
+
+</body>
+
+</html>
