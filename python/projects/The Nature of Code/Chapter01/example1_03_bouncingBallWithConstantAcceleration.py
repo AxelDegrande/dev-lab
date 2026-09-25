@@ -1,5 +1,5 @@
 import pygame
-from bal import Bal
+from balConstantAcceleration import Bal
 
 # ====CONSTANTS====
 SCREEN_WIDTH = 640
@@ -23,6 +23,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+        if event.type == pygame.WINDOWSIZECHANGED:
+            SCREEN_WIDTH = pygame.display.get_surface().get_size()[0]
+            SCREEN_HEIGHT = pygame.display.get_surface().get_size()[1]
+            bal.screenWidth = SCREEN_WIDTH
+            bal.screenHeight = SCREEN_HEIGHT
+    
 
     # Fill screen with color to wipe away anything from last frame
     screen.fill("white")

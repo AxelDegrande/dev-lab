@@ -3,8 +3,8 @@ import pygame
 class Bal:
     def __init__(self, SCREEN_WIDTH, SCREEN_HEIGHT, BALL_RADIUS):
         self.ballRadius = BALL_RADIUS
-        self.position = pygame.Vector3(100, 100, 100)
-        self.velocity = pygame.Vector3(2, 2, 2)
+        self.position = pygame.Vector2(100, 100)
+        self.velocity = pygame.Vector2(2, 2)
         self.screenWidth = SCREEN_WIDTH
         self.screenHeight = SCREEN_HEIGHT
 
