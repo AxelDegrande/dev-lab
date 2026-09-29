@@ -1,5 +1,5 @@
 import pygame
-from bal import Bal
+from ball import Ball
 
 # ====CONSTANTS====
 SCREEN_WIDTH = 640
@@ -16,7 +16,7 @@ pygame.display.set_caption("Bouncing Ball")
 clock = pygame.time.Clock()
 running = True
 
-bal = Bal(SCREEN_WIDTH, SCREEN_HEIGHT, BALL_RADIUS, modeAcceleration=1)
+bal = Ball(SCREEN_WIDTH, SCREEN_HEIGHT, BALL_RADIUS, modeColission=1, modeAcceleration=3)
 
 while running:
     # Poll for events
@@ -29,7 +29,6 @@ while running:
             SCREEN_HEIGHT = pygame.display.get_surface().get_size()[1]
             bal.screenWidth = SCREEN_WIDTH
             bal.screenHeight = SCREEN_HEIGHT
-    
 
     # Fill screen with color to wipe away anything from last frame
     screen.fill("white")

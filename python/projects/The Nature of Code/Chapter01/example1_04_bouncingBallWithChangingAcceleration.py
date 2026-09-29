@@ -1,5 +1,5 @@
 import pygame
-from balChangingAcceleration import Bal
+from bal import Bal
 
 # ====CONSTANTS====
 SCREEN_WIDTH = 640
@@ -16,7 +16,7 @@ pygame.display.set_caption("Bouncing Ball")
 clock = pygame.time.Clock()
 running = True
 
-bal = Bal(SCREEN_WIDTH, SCREEN_HEIGHT, BALL_RADIUS)
+bal = Bal(SCREEN_WIDTH, SCREEN_HEIGHT, BALL_RADIUS, modeAcceleration=2)
 
 while running:
     # Poll for events
